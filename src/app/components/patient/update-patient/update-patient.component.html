@@ -1,0 +1,152 @@
+<header>
+    <style>
+        #intro {
+            background-image: url(https://healthtechmagazine.net/sites/healthtechmagazine.net/files/styles/cdw_hero/public/articles/%5Bcdw_tech_site%3Afield_site_shortname%5D/202007/20200630_HT_Web_MonITor_Tech-Organizations-Should-Consider.jpg?itok=adOWwJ9x);
+            height: 100vh;
+        }
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+
+        form {
+            margin-top: 20%;
+        }
+
+        span {
+            color: crimson;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand nav-link" routerLink="/home">
+                <strong>Book My Doctor</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="#intro">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" routerLink="/pat-login">Login</a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask d-flex align-items-center h-1000" style="background-color: rgba(218, 121, 121, 0.8);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-5 col-md-8 ">
+                        <form class="bg-white rounded shadow-5-strong p-5" (ngSubmit)="Onsubmit()"
+                            >
+                            <div class="form-outline">
+                                <h2>Update Here</h2>
+                            </div>
+                            <div class="alert alert-success" *ngIf="dataUpdated">
+                                {{message}}
+                            </div>
+                            <br>
+                            <!-- Name input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Name<span
+                                        class="required">*</span></label>
+
+                                <input type="text" class="form-control" id="patientName" [(ngModel)]="patient.patientName" name="patientName"  required>
+                                
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Gender<span
+                                        class="required">*</span></label>
+
+                                <input type="text" id="gender" [(ngModel)]="patient.gender" class="form-control" name="gender"required>
+                                
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Age<span class="required">*</span></label>
+
+                                <input type="text" id="age" [(ngModel)]="patient.age" class="form-control" name="age" required>
+                               
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example2">Address<span
+                                        class="required">*</span></label>
+
+                                <input type="text" id="address" [(ngModel)]="patient.address" class="form-control" name="address" required>
+                               
+
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Email:<span
+                                        class="required">*</span></label>
+
+                                <input type="email" id="emailId" [(ngModel)]="patient.emailId" class="form-control" name="emailId" required>
+                                
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Mobile Number:<span
+                                        class="required">*</span></label>
+
+                                <input type="text" id="mobileNo" [(ngModel)]="patient.mobileNo" class="form-control" name="mobileNo" required>
+                                
+
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Password:<span
+                                        class="required">*</span></label>
+
+                                <input type="password" id="password" [(ngModel)]="patient.password" class="form-control" required name="password">
+                               
+
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Blood Group:<span
+                                        class="required">*</span></label>
+
+                                <input type="text" id="bloodGroup" [(ngModel)]="patient.bloodGroup"class="form-control" name="bloodGroup" required>
+                                
+
+                            </div>
+
+
+
+                            <!-- 2 column grid layout for inline styling -->
+
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block"
+                               >Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Background image -->
+</header>
+<!--Main Navigation-->
+<!-- Background image -->

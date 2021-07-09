@@ -1,0 +1,125 @@
+<header>
+    <style>
+        #intro {
+            background-image: url(https://cdn.shopify.com/app-store/listing_images/9dfb92890d3c6c5d9c431d8072e3c5dc/banner/CPT5gb70lu8CEAE=.png);
+            height: 100vh;
+        }
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+        form {
+            margin-top: 10%;
+        }
+        h2{
+            font-weight:700;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 40px;
+        }
+        h3{
+            font-family:inherit;
+        }
+        .form-control{
+          width: 300px;
+        }
+        .alert{
+            width: 200px;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand nav-link" routerLink="/home">
+                <strong>Book My Doctor</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                   
+
+                </ul>
+                <button type="button" class="btn btn-success" 
+                >Your
+                 Profile</button>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+
+    <!-- Background image -->
+</header>
+<!--Main Navigation-->
+<div id="intro" class="bg-image shadow-2-strong">
+    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(56, 17, 56, 0.61);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-20">
+                <form class="bg-white rounded shadow-5-strong p-5">
+                    <div class="form-outline">
+                        <h2>Get Doctor Details</h2>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="errormsg">
+                     <h6>No such Doctor Found</h6>
+                    </div>
+                    <div class="form-outline">
+                    <h3>Enter Doctor Id:</h3>
+                    <input #id type="text" name="id" class="form-control">
+                    <br>
+                    <button class="btn btn-success" type="submit" (click)="getDoctorById(id.value)">Get</button>
+                    </div>
+                    <br>
+
+                    <div [style.display]="doctor.doctorId ? 'block': 'none'">
+                        <table class="table">
+                            <thead class="table table-dark">
+                                <tr>
+                                    <th>Doctor Id</th>
+                                    <th>Doctor Name</th>
+                                    <th>Mobile No</th>
+                                    <th>Email</th>
+                                    <th>Location</th>
+                                    <th>Hospital Name</th>
+                                    <th>Charged Per Visit</th>
+                                    <th>Speciality</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{doctor.doctorId}}</td>
+                                    <td>{{doctor.doctorName}}</td>
+                                    <td>{{doctor.mobileNo}}</td>
+                                    <td>{{doctor.emailId}}</td>
+                                    <td>{{doctor.location}}</td>
+                                    <td>{{doctor.hospitalName}}</td>
+                                    <td>{{doctor.chargedPerVisit}}</td>
+                                    <td>{{doctor.speciality}}</td>
+
+                                </tr>
+                            </tbody>    
+
+                          </table>      
+                        
+                    </div>
+
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

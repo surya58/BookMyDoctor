@@ -1,0 +1,14 @@
+.btn-default{
+    width:100%;
+    background-color:orange!important;
+    margin:5px!important;
+  }
+  h1{
+      color:rgb(185, 230, 248); 
+      font-stretch: wider;
+      font-size: 70px;
+  }
+
+  h2{
+      color: rgb(38, 226, 185);
+  }

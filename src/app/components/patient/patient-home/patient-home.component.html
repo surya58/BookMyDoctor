@@ -1,0 +1,139 @@
+<header>
+    <style>
+        #intro {
+            background-image: url(https://st4.depositphotos.com/5775856/38350/v/950/depositphotos_383501302-stock-illustration-online-clinic-and-doctor-concept.jpg);
+            height: 100vh;
+        }
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+
+        h1 {
+            color: rgb(42, 57, 85);
+            font-size: 70px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 900;
+        }
+
+        h2 {
+            color: rgb(129, 250, 129);
+            font-weight: 700;
+        }
+
+        .modal {
+            text-align: center;
+        }
+
+        .card {
+            background-image: url(https://images.unsplash.com/photo-1559251606-c623743a6d76?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+
+        }
+        h4{
+            font-weight: 900;
+            font-family: monospace;
+            color: rgb(50, 71, 102);
+        }
+        strong{
+            color: rgb(61, 33, 87);
+        }
+        
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand nav-link" routerLink="/home">
+                <strong>Book My Doctor</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >Services</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" routerLink="/pat-create">Book Appointment</a>
+                            <a class="dropdown-item" routerLink="/doc-list">View Doctors</a>
+                            <a class="dropdown-item" routerLink="/doc-spc">View Doctors by Speciality</a>
+                            <a class="dropdown-item" routerLink="/adm-create">Give Feedback</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <h4>Welcome {{patient.patientName}}!</h4>
+                
+                <button type="button" class="btn btn-success" data-toggle="modal"
+                    data-target=".bd-example-modal-lg">Your
+                    Profile</button>
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <div class="card">
+
+
+                                <div class="model-header"><img
+                                        src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
+                                        alt="Avatar" style="width:30%" class="img-responsive"></div>
+
+                                <div class="container">
+                                    <h4>Patient Name: <b>{{patient.patientName}}</b></h4>
+                                    <p><b>Email:</b> {{patient.emailId}}</p>
+                                    <p><b>Blood Group:</b> {{patient.bloodGroup}}</p>
+                                    <p><b>Location:</b>{{patient.address}}</p>
+                                    <button class="btn btn-success" (click)="logout()" style="margin:15px;">Log
+                                        Out</button>
+
+                                    <button class="btn btn-danger" (click)="deleteMyAccount(patient.id)"
+                                        style="margin:15px;">Delete
+                                        account</button>
+                                    <button class="btn btn-primary" (click)="updatePatient(patient.id)"
+                                        >Update Details</button>
+                                    
+                                    <br>
+                                    <br>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(218, 121, 121, 0.8);">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <h1>Book Appointments at ease!</h1>
+                    <br>
+                    <h2>Select Services to get started.</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</header>
+<!--Main Navigation-->
