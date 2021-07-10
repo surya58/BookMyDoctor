@@ -27,6 +27,9 @@ import { DocSpecialityComponent } from './components/patient/doc-speciality/doc-
 import { AddDatesComponent } from './components/doctor/add-dates/add-dates.component';
 import { DocDisplayComponent } from './components/doctor/doc-display/doc-display.component';
 import { AdminGetpatbyidComponent } from './components/admin/admin-getpatbyid/admin-getpatbyid.component';
+import { BookAppointmentComponent } from './components/patient/book-appointment/book-appointment.component';
+import { GetAppointmentComponent } from './components/doctor/get-appointment/get-appointment.component';
+import { GetallAppointmentComponent } from './components/admin/getall-appointment/getall-appointment.component';
 
 
 const routes:Routes=[
@@ -109,6 +112,14 @@ const routes:Routes=[
   {
     path:'doc-add',
     component:AddDatesComponent,
+  },
+  {
+    path:'book-app/:id',
+    component:BookAppointmentComponent,
+  },
+  {
+    path:'get-app',
+    component:GetAppointmentComponent,
   }
   
 
@@ -138,6 +149,9 @@ const routes:Routes=[
     AddDatesComponent,
     DocDisplayComponent,
     AdminGetpatbyidComponent,
+    BookAppointmentComponent,
+    GetAppointmentComponent,
+    GetallAppointmentComponent,
   ],
   imports: [
     BrowserModule,

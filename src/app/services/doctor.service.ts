@@ -47,9 +47,8 @@ export class DoctorService {
   deleteAccount(doctorId: number): Observable<any> {
     return this.httpClient.delete<any>(`${this.baseUrl}/delete/${doctorId}`)
   }
-  getDoctorSpeciality(speciality: string): Observable<Doctor[]>{
-    console.log(speciality);
-    return this.httpClient.get<Doctor[]>("http://localhost:8082/doctors/findBySpeciality/"+`${speciality}`).pipe(catchError(this.errorHandler));
+  getDoctorSpeciality(speciality: string): Observable<Doctor>{
+    return this.httpClient.get<Doctor>(`http://localhost:8082/doctors/findBySpeciality/${speciality}`);
   }
   createDoctorAvailabillity(availabilitydates:AvailabilityDates): Observable<Object> {
     return this.httpClient.post(`${this.baseUrl}` + '/addAvailabilityDates', availabilitydates);

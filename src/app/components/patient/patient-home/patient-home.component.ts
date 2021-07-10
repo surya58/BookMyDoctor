@@ -49,6 +49,9 @@ export class PatientHomeComponent implements OnInit {
   updatePatient(id:number){
     this.router.navigate(['pat-upd',id])
   }
+  onBook(id:number){
+    this.router.navigate(['book-app',id])
+  }
   
 
 }

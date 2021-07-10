@@ -64,7 +64,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" >Services</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" routerLink="/pat-create">Book Appointment</a>
+                            <a class="dropdown-item" (click)="onBook(patient.id)">Book Appointment</a>
                             <a class="dropdown-item" routerLink="/doc-list">View Doctors</a>
                             <a class="dropdown-item" routerLink="/doc-spc">View Doctors by Speciality</a>
                             <a class="dropdown-item" routerLink="/adm-create">Give Feedback</a>

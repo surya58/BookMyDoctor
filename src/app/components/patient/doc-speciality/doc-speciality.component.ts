@@ -14,9 +14,10 @@ export class DocSpecialityComponent implements OnInit {
   // value:any;
   // doctor:any;
   // doctor:Doctor =new Doctor;
-  doctor : Doctor[] = [];
+  doctor : Doctor = new Doctor();
 
-  // doctors:any;
+
+   doctors:any;
   @ViewChild('speciality') inputId :any;
 
   constructor(private doctorService: DoctorService, private router:Router, private route:ActivatedRoute) { }
