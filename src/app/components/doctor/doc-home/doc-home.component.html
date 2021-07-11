@@ -61,8 +61,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" routerLink="/pat-create">Get Appointment List</a>
-                            <a class="dropdown-item" routerLink="/doc-create">Manage Appointments</a>
+                            <a class="dropdown-item" (click)="onGet(doctor.doctorId)">Get Appointment List</a>
+                           
                             <a class="dropdown-item" routerLink="/doc-add">Add Availability Dates</a>
                         </div>
                     </li>
@@ -80,6 +80,7 @@
                                 <img src="https://cdn4.iconfinder.com/data/icons/professions-1-2/151/3-512.png" alt="Avatar"style="width:30%" class="img-responsive"></div>
                                 <div class="container">
                                   <h4>Doctor Name: <b>{{doctor.doctorName}}</b></h4>
+                                  <p><b>ID:</b> {{doctor.doctorId}}</p>
                                   <p><b>Email:</b> {{doctor.emailId}}</p>
                                   <p><b>Hospital:</b> {{doctor.hospitalName}}</p>
                                   <p><b>Location:</b>{{doctor.location}}</p>

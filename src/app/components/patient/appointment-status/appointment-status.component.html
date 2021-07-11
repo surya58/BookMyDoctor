@@ -62,8 +62,13 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <form class="bg-white rounded shadow-5-strong p-5">
-                        <h1>Get Appointments List</h1>
-                        
+                        <h1>Know your Appointment Status</h1>
+                        <h3>Enter your Appointment Id:</h3>
+                        <br>
+                        <input #id type="number" name="id">
+                        <button class="btn btn-primary" type="submit" (click)="getAppointmentById(id.value)">Get</button>
+                        <br>
+                        <div [style.display]="appointment.appointmentId ? 'block': 'none'">
                         <table class="table">
 
                             <thead class="table-dark">
@@ -74,22 +79,23 @@
                                     <th>Remark </th>
                                     <th>Date</th>
                                     <th>Status</th>
-                                    <th>Approval</th>
+
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <tr *ngFor="let appointment of appointments">
+                                <tr >
                                     <td>{{appointment.appointmentId}}</td>
                                     <td>{{appointment.patient.patientName}}</td>
                                     <td>{{appointment.patient.mobileNo}}</td>
                                     <td>{{appointment.remark}}</td>
                                     <td>{{appointment.appointmentDate}}</td>
                                     <td>{{appointment.appointmentStatus }}</td>
-                                    <td><button class="btn btn-primary" (click)="upd(appointment.appointmentId)">Update</button></td>
+
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -97,4 +103,3 @@
     </div>
     <!-- Background image -->
 </header>
-<!--Main Navigation-->

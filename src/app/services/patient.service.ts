@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { AvailabilityDates } from '../entities/availability-dates';
 import { Login } from '../entities/login';
 import { Patient } from '../entities/patient';
 
@@ -45,6 +46,12 @@ export class PatientService {
   getPatientById(id:number): Observable<Patient> {
     console.log(`${this.baseUrl}`+`fetchPatientById/${id}`);
     return this.httpClient.get<Patient>(`${this.baseUrl}`+`fetchPatientById/${id}`)
+  }
+
+  getAvailDateList(): Observable<AvailabilityDates[]>{
+    return this.httpClient.get<AvailabilityDates[]>("http://localhost:8082/admin/getAllAvailibilityDates");
+    
+    //return this.http.get<Patient[]>(`${this.baseUrl}`+'fetchAllPatients');
   }
   
 }

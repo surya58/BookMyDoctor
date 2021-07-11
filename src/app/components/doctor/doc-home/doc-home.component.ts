@@ -49,6 +49,9 @@ export class DocHomeComponent implements OnInit {
   updateDoctor(doctorId:number){
     this.router.navigate(['doc-upd',doctorId])
   }
+  onGet(doctorId:number){
+    this.router.navigate(['get-app',doctorId])
+  }
   
 }
 

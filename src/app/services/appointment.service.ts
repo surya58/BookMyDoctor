@@ -14,7 +14,7 @@ export class AppointmentService {
  
   getAppointmentList(): Observable<Appointment[]>{
     
-    return this.http.get<Appointment[]>(`${this.baseUrl}`+`getAll`);
+    return this.http.get<Appointment[]>(`http://localhost:8082/admin/fetchAllAppointments`);
 
   }
 
@@ -26,12 +26,9 @@ export class AppointmentService {
  
   //  }
 
-   updateAppointment(appointment:Appointment):Observable<Object>{
-   return this.http.put("http://localhost:8082/appointment/update",appointment);
-   
-    //return this.http.put(`${this.baseUrl}`+`update`,appointment);
+  updateAppointment(appointment:Appointment):Observable<Appointment>{
+    return this.http.put<Appointment>(`http://localhost:8082/appointment/update`,appointment)
   }
-
   getAppointmentById(appointmentId:number): Observable<Appointment> {
     console.log(`${this.baseUrl}`+`getById/${appointmentId}`);
     return this.http.get<Appointment>(`${this.baseUrl}`+`getById/${appointmentId}`)
@@ -46,6 +43,7 @@ export class AppointmentService {
     return this.http.post<string>(`http://localhost:8082/appointment/save/${doctorId}/${id}/{appDate}?appDate=${appointmentDate}`, remarks);
    }
 
+ 
 
 
 

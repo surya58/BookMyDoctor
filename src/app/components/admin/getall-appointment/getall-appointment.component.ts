@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppointmentService } from 'src/app/services/appointment.service';
 
 @Component({
   selector: 'app-getall-appointment',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetallAppointmentComponent implements OnInit {
 
-  constructor() { }
+  appointments : any ;
+
+  constructor(private appointment:AppointmentService) { }
 
   ngOnInit(): void {
+    this.appointment.getAppointmentList().subscribe(data=>this.appointments=data)
   }
-
 }

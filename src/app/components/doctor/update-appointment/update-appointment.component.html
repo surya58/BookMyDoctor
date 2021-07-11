@@ -17,17 +17,11 @@
         }
 
         form {
-            margin-top: 20%;
+            margin-top: 15%;
         }
 
         span {
             color: crimson;
-        }
-        .form-select-lg{
-            width: 350px;
-        }
-        option{
-            font-family:sans-serif;
         }
     </style>
 
@@ -44,7 +38,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarExample01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                   
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="#intro">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" routerLink="/doc-login">Login</a>
+                    </li>
 
                 </ul>
 
@@ -58,44 +57,39 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-5 col-md-8 ">
-                        <form class="bg-white rounded shadow-5-strong p-5" (ngSubmit)="onSubmit(speciality.value,remark.value)"
+                        <form class="bg-white rounded shadow-5-strong p-5" (ngSubmit)="onSubmit()"
                             >
                             <div class="form-outline">
-                                <h2>Book Appointment</h2>
+                                <h2>Approve appointment</h2>
                             </div>
-                            <div class="alert alert-success" *ngIf="appBooked">
+                            <div class="alert alert-success" *ngIf="dataUpdated">
                                 {{message}}
                             </div>
                             <br>
-                            <button  class="btn-sm btn-primary" routerLink="/view-date">View Availability Dates</button>
-                            <br>
-                            <br>
                             <!-- Name input -->
-                            <select class="form-group form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="doctor.speciality" name="speciality"#speciality>
-                                <option selected >Speciality</option>
-                                <option *ngFor="let doc of doctorList"><h3>{{doc.speciality}}</h3></option>
-                                
-                        
-                                </select>
-                                <br>
-                            
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="form1Example1">Appointment Date:<span
-                                        class="required">*</span></label>
+                                <label class="form-label" for="form1Example1">Appointment Date
+                                       </label>
 
-                                <input type="date" id="appointmentDate" [(ngModel)]="appointmentDate"class="form-control" name="appointmentDate" required>
+                                <input type="date" class="form-control" id="appointmentDate" [(ngModel)]="appointmentDate" name="appointmentDate"  >
                                 
-
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="form1Example1">Reason for Consulting:<span
-                                        class="required">*</span></label>
-
-                                <input type="text" id="remark" [(ngModel)]="appointment.remark"class="form-control" name="remark" required #remark>
-                                
-
                             </div>
 
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Reason for Consultation
+                                       </label>
+
+                                <input type="text" id="remark" [(ngModel)]="appointment.remark" class="form-control" name="remark">
+                                
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form1Example1">Appointment status<span class="required">*</span></label>
+
+                                <input type="text" id="appointmentStatus" [(ngModel)]="appointment.appointmentStatus" class="form-control" name="appointmentStatus" required>
+                               
+                            </div>
+
+                           
 
 
                             <!-- 2 column grid layout for inline styling -->
@@ -103,7 +97,7 @@
 
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block"
-                               >Book</button>
+                               >Update</button>
                         </form>
                     </div>
                 </div>
@@ -116,4 +110,5 @@
 </header>
 <!--Main Navigation-->
 <!-- Background image -->
+
 

@@ -30,6 +30,9 @@ import { AdminGetpatbyidComponent } from './components/admin/admin-getpatbyid/ad
 import { BookAppointmentComponent } from './components/patient/book-appointment/book-appointment.component';
 import { GetAppointmentComponent } from './components/doctor/get-appointment/get-appointment.component';
 import { GetallAppointmentComponent } from './components/admin/getall-appointment/getall-appointment.component';
+import { ViewAvailDatesComponent } from './components/patient/view-avail-dates/view-avail-dates.component';
+import { UpdateAppointmentComponent } from './components/doctor/update-appointment/update-appointment.component';
+import { AppointmentStatusComponent } from './components/patient/appointment-status/appointment-status.component';
 
 
 const routes:Routes=[
@@ -118,8 +121,24 @@ const routes:Routes=[
     component:BookAppointmentComponent,
   },
   {
-    path:'get-app',
+    path:'get-app/:doctorId',
     component:GetAppointmentComponent,
+  },
+  {
+    path:'getall-app',
+    component:GetallAppointmentComponent,
+  },
+  {
+    path:'view-date',
+    component:ViewAvailDatesComponent,
+  },
+  {
+    path:'upd-app/:appointmentId',
+    component:UpdateAppointmentComponent,
+  },
+  {
+    path:'show-stat',
+    component: AppointmentStatusComponent,
   }
   
 
@@ -152,6 +171,9 @@ const routes:Routes=[
     BookAppointmentComponent,
     GetAppointmentComponent,
     GetallAppointmentComponent,
+    ViewAvailDatesComponent,
+    UpdateAppointmentComponent,
+    AppointmentStatusComponent,
   ],
   imports: [
     BrowserModule,
