@@ -9,9 +9,9 @@ import { Feedback } from '../entities/feedback';
 export class FeedbackService {
   private baseURL='http://localhost:8082/feedback/';
   constructor(private http:HttpClient) { }
-  createFeedback(comments:string,rating:number, doctorId:number,id:number): Observable<string> {
+  createFeedback(comments:string, doctorId:number,id:number): Observable<string> {
     // console.log(`http://localhost:8082/appointment/save/${doctorId}/${id}/`)
-    return this.http.post<string>(`http://localhost:8082/feedback/saveFeedback/${doctorId}/${id}/?rating=${rating}`, comments);
+    return this.http.post<string>(`http://localhost:8082/feedback/saveFeedback/${doctorId}/${id}`, comments);
    
   }
 

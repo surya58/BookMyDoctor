@@ -53,7 +53,7 @@ export class GiveFeedbackComponent implements OnInit {
       this.feedback.doctor=data;
       console.log(this.feedback);
       console.log(this.doctor)
-      this.feedbackService.createFeedback(comments,this.rating,data.doctorId,this.id).subscribe(body=>{console.log(body)},error =>console.log(error));
+      this.feedbackService.createFeedback(comments,data.doctorId,this.id).subscribe(body=>{console.log(body)},error =>console.log(error));
       
     
  
