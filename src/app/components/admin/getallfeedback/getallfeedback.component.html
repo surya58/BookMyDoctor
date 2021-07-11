@@ -1,0 +1,91 @@
+<header>
+    <style>
+        #intro {
+            background-image: url(https://cdn.shopify.com/app-store/listing_images/9dfb92890d3c6c5d9c431d8072e3c5dc/banner/CPT5gb70lu8CEAE=.png);
+            height: 100vh;
+        }
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+
+        .navbar .nav-link {
+            color: rgb(255, 255, 255) !important;
+        }
+
+        td {
+            color: rgb(13, 13, 14);
+            font-weight: 800;
+            font-style: inherit;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        form {
+            margin-top: 70px;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand nav-link" routerLink="/home">
+                <strong>Book My Doctor</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+
+                </ul>
+                <button type="button" class="btn btn-success">Your
+                    Profile</button>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(56, 17, 56, 0.61);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <form class="bg-white rounded shadow-5-strong p-5">
+    
+                        <table class="table">
+
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>feedbackId</th>
+                                    <th>patient Name</th>
+                                    <th>feedbackComment</th>
+                                    <th>rating</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let feedback of feedbacks">
+                                    <td>{{feedback.feedbackId}}</td>
+                                    <td>{{feedback.patient.patientName}}</td>
+                                    <td>{{feedback.comments}}</td>
+                                    <td>{{feedback.rating}}</td>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</header>
+<!--Main Navigation-->

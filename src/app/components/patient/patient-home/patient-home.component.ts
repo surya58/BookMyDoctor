@@ -52,6 +52,10 @@ export class PatientHomeComponent implements OnInit {
   onBook(id:number){
     this.router.navigate(['book-app',id])
   }
+
+  givefeed(id:number){
+    this.router.navigate(['give-feed',id])
+  }
   
 
 }

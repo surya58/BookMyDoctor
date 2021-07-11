@@ -1,19 +1,22 @@
+import { Doctor } from "./doctor";
 import { Patient } from "./patient";
 
 export class Feedback implements IFeedback {
     feedbackId: number = 0;
-    feedbackComment : string ="";
+    comments : string ="";
     rating : number =0;
-    patient:Patient[] =[];
+    patient:any;
+    doctor:any;
 
 
 }
 
 export interface IFeedback {
     feedbackId: number;
-    feedbackComment : string;
+    comments : string;
     rating : number;
-    patient:Patient[];
+    patient:Patient;
+    doctor:Doctor;
 
 
 }

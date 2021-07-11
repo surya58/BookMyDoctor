@@ -68,7 +68,7 @@
                             <a class="dropdown-item" (click)="onBook(patient.id)">Book Appointment</a>
                             <a class="dropdown-item" routerLink="/doc-list">View Doctors</a>
                             <a class="dropdown-item" routerLink="/doc-spc">View Doctors by Speciality</a>
-                            <a class="dropdown-item" routerLink="/adm-create">Give Feedback</a>
+                            <a class="dropdown-item" (click)="givefeed(patient.id)">Give Feedback</a>
                             <a class="dropdown-item" routerLink="/show-stat">View your Appointment status</a>
                         </div>
                     </li>

@@ -33,6 +33,9 @@ import { GetallAppointmentComponent } from './components/admin/getall-appointmen
 import { ViewAvailDatesComponent } from './components/patient/view-avail-dates/view-avail-dates.component';
 import { UpdateAppointmentComponent } from './components/doctor/update-appointment/update-appointment.component';
 import { AppointmentStatusComponent } from './components/patient/appointment-status/appointment-status.component';
+import { GiveFeedbackComponent } from './components/patient/give-feedback/give-feedback.component';
+import { GetallfeedbackComponent } from './components/admin/getallfeedback/getallfeedback.component';
+import { GetfeedBydocidComponent } from './components/doctor/getfeed-bydocid/getfeed-bydocid.component';
 
 
 const routes:Routes=[
@@ -139,6 +142,18 @@ const routes:Routes=[
   {
     path:'show-stat',
     component: AppointmentStatusComponent,
+  },
+  {
+    path:'give-feed/:id',
+    component: GiveFeedbackComponent,
+  },
+  {
+    path:'getall-feed',
+    component: GetallfeedbackComponent,
+  },
+  {
+    path:'getfed-id/:doctorId',
+    component:GetfeedBydocidComponent,
   }
   
 
@@ -174,6 +189,9 @@ const routes:Routes=[
     ViewAvailDatesComponent,
     UpdateAppointmentComponent,
     AppointmentStatusComponent,
+    GiveFeedbackComponent,
+    GetallfeedbackComponent,
+    GetfeedBydocidComponent,
   ],
   imports: [
     BrowserModule,

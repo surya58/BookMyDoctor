@@ -52,6 +52,10 @@ export class DocHomeComponent implements OnInit {
   onGet(doctorId:number){
     this.router.navigate(['get-app',doctorId])
   }
+
+  onfed(doctorId:number){
+    this.router.navigate(['getfed-id',doctorId])
+  }
   
 }
 
